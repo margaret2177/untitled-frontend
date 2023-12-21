@@ -1,4 +1,8 @@
 import axios from "axios";
+const host =
+  process.env.NODE_ENV == "production"
+    ? "https://untitled-backend-1qq6.onrender.com"
+    : "http://127.0.0.1:8000";
 
 const courses = {
   state: () => ({
@@ -17,9 +21,7 @@ const courses = {
   },
   actions: {
     async fetchPageData({ commit }, page = 1) {
-      const { data } = await axios.get(
-        `http://127.0.0.1:8000/api/home/${page}`
-      );
+      const { data } = await axios.get(`${host}/api/home/${page}`);
       console.log("pageData ", data);
       commit("setPageData", data);
     },
