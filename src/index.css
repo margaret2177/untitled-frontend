@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    max-height: 100vh !important;
+  }
+}
+@layer components {
+  /* globals................. */
+  .icon {
+    @apply text-[24px] flex items-center justify-center;
+  }
+  .big-title {
+    @apply text-[32px] text-[#2d2f31];
+  }
+  .small-title {
+    @apply text-[24px] text-[#2d2f31];
+  }
+  .link {
+    @apply text-[14px] text-[#2d2f31] px-[12px] my-[12px];
+  }
+  .link.activ {
+    @apply text-[#5624d0];
+  }
+  .form-control {
+    @apply flex flex-col items-start px-3 py-1 border-[1px] border-[gray] rounded-2xl w-[100%];
+  }
+  .form-control input[type="text"],
+  .form-control input[type="password"] {
+    width: 100%;
+    background: transparent;
+    outline: none;
+    border: 1px solid lightblue;
+    border-radius: 16px;
+    padding: 0 10px;
+  }
+}
